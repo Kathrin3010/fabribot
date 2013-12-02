@@ -1,0 +1,473 @@
+<?xml version="1.0" ?>
+<robot name="fabribot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:macro name="fabribot">
+
+  	<!-- Import all Gazebo-customization elements, including Gazebo colors -->
+  	<xacro:include filename="$(find fabribot_description)/urdf/fabribot.gazebo" />
+
+		<!-- Used for fixing robot to Gazebo 'base_link' -->
+		<link name="world"/>
+
+		<!-- link list -->
+		<!-- base_link ============================== -->
+		<link name="base_link">
+		
+		<visual>
+     			<origin
+        		xyz="0 0 0"
+       			rpy="0 0 0" />
+      			<geometry>
+        			<mesh
+          			filename="package://fabribot_description/meshes/visual/base_link.stl" />
+      			</geometry>
+      			<material
+        			name="abb_orange">
+        			<color
+          			rgba="1 0.43 0 1" />
+      			</material>
+    		</visual>
+
+		<collision>
+     			<origin
+        		xyz="0 0 0"
+       			rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://fabribot_description/meshes/collision/base_link.stl" />
+			</geometry>
+			<material name="yellow">
+				<color rgba="0 1 1 1"/>
+			</material>
+		</collision>
+
+		<inertial>
+		      <origin xyz="0 0 0.0785" rpy="0 0 0"/>
+		      <mass value="1"/>
+		      <inertia
+			  ixx="1.0" ixy="0.0" ixz="0.0"
+			  iyy="1.0" iyz="0.0"
+			  izz="1.0"/>
+		</inertial>
+
+		</link>
+		
+		<!-- link_1 ============================== -->
+		<link name="link_1">
+		
+		<visual>
+      			<origin
+        			xyz="0 0 0"
+        			rpy="0 0 0" />
+      			<geometry>
+        			<mesh
+          			filename="package://fabribot_description/meshes/visual/link_1.stl" />
+      			</geometry>
+      			<material name="abb_orange"/>
+    		</visual>
+
+		<collision>
+			<origin
+				xyz="0 0 0"
+				rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://fabribot_description/meshes/collision/link_1.stl" />
+			</geometry>
+			<material name="yellow"/>
+		</collision>
+
+		<inertial>
+		      <origin xyz="0 0 0.351" rpy="0 0 0"/>
+		      <mass value="1"/>
+		      <inertia
+			  ixx="1.0" ixy="0.0" ixz="0.0"
+			  iyy="1.0" iyz="0.0"
+			  izz="1.0"/>
+		</inertial>
+
+		</link>
+		
+		<!-- link_2 ============================== -->
+		<link name="link_2">
+		
+		<visual>
+      			<origin
+        			xyz="-0.175 0 -0.495"
+        			rpy="0 0 0" />
+      			<geometry>
+        			<mesh
+          			filename="package://fabribot_description/meshes/visual/link_2.stl" />
+      			</geometry>
+      			<material name="abb_orange"/>
+    		</visual>
+
+		<collision>
+      			<origin
+        			xyz="-0.175 0 -0.495"
+        			rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://fabribot_description/meshes/collision/link_2.stl" />
+			</geometry>
+			<material name="yellow"/>
+		</collision>
+
+		<inertial>
+		      <origin xyz="0.175 -0.174234 1.0425" rpy="0 0 0"/>
+		      <mass value="1"/>
+		      <inertia
+			  ixx="1.0" ixy="0.0" ixz="0.0"
+			  iyy="1.0" iyz="0.0"
+			  izz="1.0"/>
+		</inertial>
+
+		</link>
+
+		<!-- link_3 ============================== -->
+		<link name="link_3">
+		<visual>
+			<origin
+				xyz="-0.175 0 -1.59"
+				rpy="0 0 0" />
+		  	<geometry>
+				<mesh
+			  	filename="package://fabribot_description/meshes/visual/link_3.stl" />
+		  	</geometry>
+		  	<material name="abb_orange"/>
+		</visual>
+
+		<collision>
+      			<origin
+        			xyz="-0.175 0 -1.59"
+        			rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://fabribot_description/meshes/collision/link_3.stl" />
+			</geometry>
+			<material name="yellow"/>
+		</collision>
+
+		<inertial>
+		      <origin xyz="0.175 -0.101182 1.59" rpy="0 0 0"/>
+		      <mass value="1"/>
+		      <inertia
+			  ixx="1.0" ixy="0.0" ixz="0.0"
+			  iyy="1.0" iyz="0.0"
+			  izz="1.0"/>
+		</inertial>
+
+		</link>
+
+		<!-- link_4 ============================== -->
+		<link name="link_4">
+		<visual>
+			  <origin
+				xyz="-0.507 0 -1.765"
+				rpy="0 0 0" />
+			  <geometry>
+				<mesh
+				  filename="package://fabribot_description/meshes/visual/link_4.stl" />
+			  </geometry>
+			  <material name="abb_orange"/>
+		</visual>
+
+		<collision>
+      			<origin
+        			xyz="-0.507 0 -1.765"
+        			rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://fabribot_description/meshes/collision/link_4.stl" />
+			</geometry>
+			<material name="yellow"/>
+		</collision>
+
+		<inertial>
+		      <origin xyz="0.747692 0 1.765" rpy="0 0 0"/>
+		      <mass value="1"/>
+		      <inertia
+			  ixx="1.0" ixy="0.0" ixz="0.0"
+			  iyy="1.0" iyz="0.0"
+			  izz="1.0"/>
+		</inertial>
+
+		</link>
+
+		<!-- link_5 ============================== -->
+		<link name="link_5">
+
+		<visual>
+			<origin
+				xyz="-1.446 0 -1.765"
+				rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://fabribot_description/meshes/visual/link_5.stl" />
+			</geometry>
+			<material name="abb_orange"/>
+		</visual>
+
+		<collision>
+      			<origin
+        			xyz="-1.446 0 -1.765"
+        			rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://fabribot_description/meshes/collision/link_5.stl" />
+			</geometry>
+			<material name="yellow"/>
+		</collision>
+
+		<inertial>
+		      <origin xyz="1.446 0 1.765" rpy="0 0 0"/>
+		      <mass value="1"/>
+		      <inertia
+			  ixx="1.0" ixy="0.0" ixz="0.0"
+			  iyy="1.0" iyz="0.0"
+			  izz="1.0"/>
+		</inertial>
+
+		</link>
+
+		<!-- link_6 ============================== -->
+		<link name="link_6">
+
+		<visual>
+			<origin
+				xyz="-1.581 0 -1.765"
+				rpy="0 0 0" />
+			<geometry>
+				<mesh
+				  filename="package://fabribot_description/meshes/visual/link_6.stl" />
+			</geometry>
+			<material name="abb_orange"/>
+		</visual>
+
+		<collision>
+      			<origin
+        			xyz="-1.581 0 -1.765"
+        			rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://fabribot_description/meshes/collision/link_6.stl" />
+			</geometry>
+			<material name="yellow"/>
+		</collision>
+
+		<inertial>
+		      <origin xyz="1.576 0 1.765" rpy="0 0 0"/>
+		      <mass value="1"/>
+		      <inertia
+			  ixx="1.0" ixy="0.0" ixz="0.0"
+			  iyy="1.0" iyz="0.0"
+			  izz="1.0"/>
+		</inertial>
+
+		</link>
+
+		<link name="tool0"/>
+
+		<!-- end of link list -->
+
+		<!-- joint list -->
+
+
+		<joint name="fixed" type="fixed"> <!-- ============================== fixing base link to world -->
+		  <parent link="world"/>
+		  <child link="base_link"/>
+		</joint>
+
+
+		<joint name="joint1" type="revolute"> <!-- ============================== joint 1 -->
+			<origin
+			  xyz="0 0 0"
+			  rpy="0 0 0" />
+			<parent
+			  link="base_link" />
+			<child
+			  link="link_1" />
+			<axis
+			  xyz="0 0 1" />
+			<limit
+			  lower="-3.1416"
+			  upper="3.1416"
+			  effort="0"
+			  velocity="2.618" />
+			<calibration
+			  rising="0"
+			  falling="0" />
+			<dynamics
+			  damping="0.7"
+			  friction="0" />
+		</joint>
+		<joint name="joint2" type="revolute"> <!-- ============================== joint 2 -->
+			<origin
+			  xyz="0.175 0 0.495" 
+			  rpy="0 0 0" />
+			<parent
+			  link="link_1" />
+			<child
+			  link="link_2" />
+			<axis
+			  xyz="0 1 0" />
+			<limit
+			  lower="-1.7453"
+			  upper="1.9199"
+			  effort="0"
+			  velocity="2.618" />
+			<calibration
+			  rising="0"
+			  falling="0" />
+			<dynamics
+			  damping="0.7"
+			  friction="0" />
+  		</joint>
+		<joint name="joint3" type="revolute"> <!-- ============================== joint 3 -->
+			<origin
+			  xyz="0 0 1.095"
+			  rpy="0 0 0" />
+			<parent
+			  link="link_2" />
+			<child
+			  link="link_3" />
+			<axis
+			  xyz="0 1 0" />
+			<limit
+			  lower="-1.0472"
+			  upper="1.1345"
+			  effort="0"
+			  velocity="2.618" />
+			<calibration
+			  rising="0"
+			  falling="0" />
+			<dynamics
+			  damping="0.7"
+			  friction="0" />
+		</joint>
+		<joint name="joint4" type="revolute"> <!-- ============================== joint 4 -->
+			<origin
+			  xyz="0.332 0 0.175"
+			  rpy="0 0 0" />
+			<parent
+			  link="link_3" />
+			<child
+			  link="link_4" />
+			<axis
+			  xyz="1 0 0" />
+			<limit
+			  lower="-3.49"
+			  upper="3.49"
+			  effort="0"
+			  velocity="6.2832" />
+			<calibration
+			  rising="0"
+			  falling="0" />
+			<dynamics
+			  damping="0.7"
+			  friction="0" />
+		</joint>
+		<joint name="joint5" type="revolute"> <!-- ============================== joint 5 -->
+			<origin
+			  xyz="0.939 0 0"
+			  rpy="0 0 0" />
+			<parent
+			  link="link_4" />
+			<child
+			  link="link_5" />
+			<axis
+			  xyz="0 1 0" />
+			<limit
+			  lower="-2.0944"
+			  upper="2.0944"
+			  effort="0"
+			  velocity="6.2832" />
+			<calibration
+			  rising="0"
+			  falling="0" />
+			<dynamics
+			  damping="0.7"
+			  friction="0" />
+		</joint>
+		<joint name="joint6" type="revolute"> <!-- ============================== joint 6 -->
+			<origin
+			  xyz="0.135 0 0"
+			  rpy="0 0 0" />
+			<parent
+			  link="link_5" />
+			<child
+			  link="link_6" />
+			<axis
+			  xyz="1 0 0" />
+			<limit
+			  lower="-6.9813"
+			  upper="6.9813"
+			  effort="0"
+			  velocity="7.854" />
+			<calibration
+			  rising="0"
+			  falling="0" />
+			<dynamics
+			  damping="0.7"
+			  friction="0" />
+		</joint>
+		<joint name="joint6-tool0" type="fixed"> <!-- ============================== tool 0 -->
+			<parent link="link_6"/>
+			<child link="tool0"/>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+		</joint>
+
+		<!-- end of joint list -->
+	
+	
+	<!-- transmission values for gazebo joint efforts ==============================  -->
+
+	<transmission name="tran_1">
+	    <type>transmission_interface/SimpleTransmission</type>
+	    <joint name="joint1"/>
+	    <actuator name="motor_1">
+	      <hardwareInterface>EffortJointInterface</hardwareInterface>
+	      <mechanicalReduction>1</mechanicalReduction>
+	    </actuator>
+	</transmission>
+
+	<transmission name="tran_2">
+	    <type>transmission_interface/SimpleTransmission</type>
+	    <joint name="joint2"/>
+	    <actuator name="motor_2">
+	      <hardwareInterface>EffortJointInterface</hardwareInterface>
+	      <mechanicalReduction>1</mechanicalReduction>
+	    </actuator>
+	</transmission>
+
+	<transmission name="tran_3">
+	    <type>transmission_interface/SimpleTransmission</type>
+	    <joint name="joint3"/>
+	    <actuator name="motor_3">
+	      <hardwareInterface>EffortJointInterface</hardwareInterface>
+	      <mechanicalReduction>1</mechanicalReduction>
+	    </actuator>
+	</transmission>
+
+	<transmission name="tran_4">
+	    <type>transmission_interface/SimpleTransmission</type>
+	    <joint name="joint4"/>
+	    <actuator name="motor_4">
+	      <hardwareInterface>EffortJointInterface</hardwareInterface>
+	      <mechanicalReduction>1</mechanicalReduction>
+	    </actuator>
+	</transmission>
+
+	<transmission name="tran_5">
+	    <type>transmission_interface/SimpleTransmission</type>
+	    <joint name="joint5"/>
+	    <actuator name="motor_5">
+	      <hardwareInterface>EffortJointInterface</hardwareInterface>
+	      <mechanicalReduction>1</mechanicalReduction>
+	    </actuator>
+	</transmission>
+
+	<transmission name="tran_6">
+	    <type>transmission_interface/SimpleTransmission</type>
+	    <joint name="joint6"/>
+	    <actuator name="motor_6">
+	      <hardwareInterface>EffortJointInterface</hardwareInterface>
+	      <mechanicalReduction>1</mechanicalReduction>
+	    </actuator>
+	</transmission>
+
+
+	</xacro:macro>
+</robot>
